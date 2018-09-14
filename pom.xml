@@ -46,12 +46,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <exclusions>
+            <!--            <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter-logging</artifactId>
                 </exclusion>
-            </exclusions>
+            </exclusions>-->
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -67,12 +67,15 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
+	
+		
         <dependency>
             <groupId>com.github.tomakehurst</groupId>
             <artifactId>wiremock</artifactId>
             <version>2.7.1</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib-nodep</artifactId>
@@ -197,10 +200,10 @@
             <version>1.23.0</version>
             <type>jar</type>
         </dependency>
-        <dependency>
+        <!--        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-log4j2</artifactId>
-        </dependency> 
+        </dependency> -->
         <!-- https://mvnrepository.com/artifact/com.hazelcast/hazelcast -->
         <dependency>
             <groupId>com.hazelcast</groupId>
