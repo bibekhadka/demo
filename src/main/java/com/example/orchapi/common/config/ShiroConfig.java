@@ -19,6 +19,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.apache.shiro.mgt.SecurityManager;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 
 @Configuration
 public class ShiroConfig {
@@ -60,10 +61,13 @@ public class ShiroConfig {
     }
 
     @Bean
-    public Filter logout() {
+    public FilterRegistrationBean logout() {
+        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
         LogoutFilter logoutFilter = new LogoutFilter();
         logoutFilter.setRedirectUrl("/login.jsp");
-        return logoutFilter;
+        filterRegistrationBean.setFilter(logoutFilter);
+        filterRegistrationBean.addUrlPatterns("/logout.htm");
+        return filterRegistrationBean;
     }
 
     @Bean
